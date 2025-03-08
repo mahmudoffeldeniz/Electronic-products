@@ -1,0 +1,186 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 14 Pro",
+    "price": 1099,
+    "image": "https://maximstore.com/_next/image?url=https%3A%2F%2Fback.maximstore.com%2Fstatic%2Fimages%2F81e1e805-03f8-42c2-a494-ad6772fb6db1.png&w=3840&q=75",
+    "category": "Smartphone",
+    "description": "Apple iPhone 14 Pro - 256GB, Deep Purple"
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S23 Ultra",
+    "price": 1199,
+    "image": "https://static.vecteezy.com/system/resources/previews/022/722/945/non_2x/samsung-galaxy-s23-ultra-transparent-image-free-png.png",
+    "category": "Smartphone",
+    "description": "Samsung Galaxy S23 Ultra - 512GB, Phantom Black"
+  },
+  {
+    "id": 3,
+    "name": "MacBook Pro 16",
+    "price": 2499,
+    "image": "https://istore.co.na/cdn/shop/files/MacBook_Pro_14-in_Silver_Pure_Front_Screen__USEN-1_2048x_5000x_18c6d75e-b439-4094-a6ea-03152c791369_1200x.webp?v=1687163166",
+    "category": "Laptop",
+    "description": "Apple MacBook Pro 16 M2 Max - 1TB, Space Gray"
+  },
+  {
+    "id": 4,
+    "name": "Dell XPS 15",
+    "price": 1899,
+    "image": "https://headon.com.pk/wp-content/uploads/2023/06/Untitled-design-84.png",
+    "category": "Laptop",
+    "description": "Dell XPS 15 - Intel i9, 32GB RAM, 1TB SSD"
+  },
+  {
+    "id": 5,
+    "name": "Sony WH-1000XM5",
+    "price": 399,
+    "image": "https://sony.scene7.com/is/image/sonyglobalsolutions/360-RA-category-icon-20221202?$S7Product$&fmt=png-alpha",
+    "category": "Headphones",
+    "description": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones"
+  },
+  {
+    "id": 6,
+    "name": "AirPods Pro 2",
+    "price": 249,
+    "image": "https://www.myepico.com/wp-content/uploads/2023/01/EPI-PH-C74-BLA-02.png",
+    "category": "Headphones",
+    "description": "Apple AirPods Pro (2nd Generation) - White"
+  },
+  {
+    "id": 7,
+    "name": "iPad Pro 12.9",
+    "price": 1299,
+    "image": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111979_ipad-pro-12-2018.png",
+    "category": "Tablet",
+    "description": "Apple iPad Pro 12.9 - M2 Chip, 512GB, Silver"
+  },
+  {
+    "id": 8,
+    "name": "Samsung Galaxy Tab S8",
+    "price": 999,
+    "image": "https://redstore.am/uploads/shop/products/main/0347f07bcc1bc6ef81491e9e99df0ee0.png",
+    "category": "Tablet",
+    "description": "Samsung Galaxy Tab S8 - 256GB, Mystic Silver"
+  },
+  {
+    "id": 9,
+    "name": "Apple Watch Ultra",
+    "price": 799,
+    "image": "https://pixcap.com/cdn/library/template/1722265886583/thumbnail/Apple_Watch_Ultra_2_3D_Model_transparent_800_800.webp",
+    "category": "Smartwatch",
+    "description": "Apple Watch Ultra - Titanium Case, Ocean Band"
+  },
+  {
+    "id": 10,
+    "name": "Samsung Galaxy Watch 5",
+    "price": 349,
+    "image": "https://images.samsung.com/is/image/samsung/p6pim/levant/2208/gallery/levant-galaxy-watch5-44mm-sm-r910nzbamea-533191737?$684_547_PNG$",
+    "category": "Smartwatch",
+    "description": "Samsung Galaxy Watch 5 - Bluetooth, 44mm, Graphite"
+  },
+  {
+    "id": 11,
+    "name": "Logitech MX Master 3",
+    "price": 99,
+    "image": "https://resource.logitech.com/content/dam/logitech/en/products/mice/mx-master-3s/migration-assets-for-delorean-2025/gallery/mx-master-3s-top-view-graphite.png",
+    "category": "Accessories",
+    "description": "Logitech MX Master 3 Advanced Wireless Mouse"
+  },
+  {
+    "id": 12,
+    "name": "Razer BlackWidow V4",
+    "price": 179,
+    "image": "https://assets3.razerzone.com/ZPTUy5eUBpt07nwmGhGTeb5iCdc=/1199x799/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe7%2Fh76%2F9815507599390%2Fbw-v4-pro-75-500x500.png",
+    "category": "Accessories",
+    "description": "Razer BlackWidow V4 Mechanical Gaming Keyboard"
+  },
+  {
+    "id": 13,
+    "name": "Sony PlayStation 5",
+    "price": 499,
+    "image": "https://thegoodguys.sirv.com/products/50089696/50089696_901937.PNG?scale.height=505&scale.width=773&canvas.height=505&canvas.width=773&canvas.opacity=0&q=90",
+    "category": "Gaming",
+    "description": "Sony PlayStation 5 - Digital Edition"
+  },
+  {
+    "id": 14,
+    "name": "Xbox Series X",
+    "price": 499,
+    "image": "https://pngimg.com/d/xbox_PNG101377.png",
+    "category": "Gaming",
+    "description": "Microsoft Xbox Series X - 1TB SSD, Black"
+  },
+  {
+    "id": 15,
+    "name": "Nvidia RTX 4090",
+    "price": 1599,
+    "image": "https://www.pny.com/productimages/7629E07E-13A8-4700-BD42-AF16013FB16B/images/1-XLR8-RTX-4090-VERTO-EPIC-X-Triple-Fan-ra.png",
+    "category": "PC Components",
+    "description": "Nvidia GeForce RTX 4090 - 24GB GDDR6X"
+  },
+  {
+    "id": 16,
+    "name": "AMD Ryzen 9 7950X",
+    "price": 699,
+    "image": "https://www.csl-computer.com/en/media/catalog/product/cache/4/image/3000x/9df78eab33525d08d6e5fb8d27136e95/c/s/csl_cronos_window-ww_wak_240er_rot_3000px_2.png",
+    "category": "PC Components",
+    "description": "AMD Ryzen 9 7950X - 16 Cores, 32 Threads, 5.7GHz Boost"
+  },
+  {
+    "id": 17,
+    "name": "GoPro Hero 11",
+    "price": 499,
+    "image": "https://www.threesixtycameras.com/wp-content/uploads/thumbs_dir/hero-11-png-q3i8os0wyho6qqymzqi095qae27cyw3knauq0zr5rg.png",
+    "category": "Camera",
+    "description": "GoPro Hero 11 Black - 5.3K60, Waterproof"
+  },
+  {
+    "id": 18,
+    "name": "DJI Mini 3 Pro",
+    "price": 899,
+    "image": "https://se-cdn.djiits.com/tpc/uploads/spu/cover/6486fa153ef507ae70987978b9812ece@xlarge.png",
+    "category": "Drone",
+    "description": "DJI Mini 3 Pro - 4K HDR, 34-min Flight Time"
+  },
+  {
+    "id": 19,
+    "name": "LG C2 OLED TV",
+    "price": 1299,
+    "image": "https://media.croma.com/image/upload/v1722284972/Croma%20Assets/Entertainment/Television/Images/257132_0_gr4cvf.png",
+    "category": "TV",
+    "description": "LG C2 OLED 55-inch Smart TV - 4K, Dolby Vision, 120Hz"
+  },
+  {
+    "id": 20,
+    "name": "Bose SoundLink Revolve",
+    "price": 179,
+    "image": "https://geovoice.ge/images/detailed/4/bose-soundlink-revolve-plus-ii-luxe-silver-bose-geovoice.ge-portable-speakers-3004.png",
+    "category": "Audio",
+    "description": "Bose SoundLink Revolve - Portable Bluetooth Speaker"
+  },
+  {
+    "id": 21,
+    "name": "iPhone 16 Pro",
+    "price": 2099,
+    "image": "https://www.smart.com.kh/_next/image?url=https%3A%2F%2Fsmartaxiata-website-prod-v2.s3.ap-southeast-1.amazonaws.com%2FNatural_i_Phone_16_Pro_aa1c673c69.png&w=3840&q=75",
+    "category": "Smartphone",
+    "description": "Apple iPhone 16 Pro - 256GB, Deep Purple"
+  },
+  {
+    "id": 22,
+    "name": "Xiaomi redmi 12",
+    "price": 299,
+    "image": "https://i05.appmifile.com/386_item_uk/25/06/2023/48cf28f743d4cd70a2dc0b408f32e417!400x400!85.png",
+    "category": "Smartphone",
+    "description": "Xiaomi redmi 12 - 128GB, Black"
+  },
+  {
+    "id": 23,
+    "name": "Samsung TV",
+    "price": 2299,
+    "image": "https://images.samsung.com/is/image/samsung/au_UA65KU6000WXXY_008_Front_black?$624_624_PNG$",
+    "category": "TV",
+    "description": "Series 6 65 inch KU6000 UHD LED~ TV | Samsung - 4K, Dolby Vision, 120Hz"
+  }
+]
