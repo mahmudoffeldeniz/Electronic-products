@@ -1,11 +1,13 @@
-import React from 'react';
-import Slider from '../Companents/Carousel'
-import ProductList from './ProductList';
+import React from "react";
+import Slider from "../Companents/Carousel";
+import ProductList from "./ProductList";
+import BrandSlider from "../Companents/Brands";
 function HomePage() {
   return (
     <div>
       <Slider />
-      <ProductList/>
+      <BrandSlider />
+      <ProductList />
     </div>
   );
 }

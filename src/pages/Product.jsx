@@ -45,7 +45,14 @@ const ProductList = () => {
   return (
     <div style={{ padding: "40px", minHeight: "100vh" }}>
       {/* Header Section */}
-      <div className="category-main">
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "20px",
+        }}
+      >
         <h1
           style={{
             color: "#333",

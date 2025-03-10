@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ImBin2 } from "react-icons/im";
 import { IoLocationSharp } from "react-icons/io5";
+import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 import {
   AppBar,
   Toolbar,
@@ -18,6 +19,8 @@ import {
   ListItem,
   ListItemText,
   Paper,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import {
   Search,
@@ -41,8 +44,13 @@ function Header() {
   const [drawerType, setDrawerType] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [showResults, setShowResults] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const searchRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation(); // Get current route
+
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
   const closeMenu = () => setMenuOpen(false);
@@ -60,7 +68,7 @@ function Header() {
     setDrawerOpen(true);
   };
 
-  // Filtrlənmiş məhsullar
+  // Filter component: search products
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -72,9 +80,7 @@ function Header() {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const handleProductClick = (productId) => {
@@ -175,10 +181,20 @@ function Header() {
     </Box>
   );
 
+  // Function to get link style: active links will be highlighted.
+  const getLinkStyle = (path) => ({
+    textDecoration: "none",
+    fontWeight: "bold",
+    fontSize: "20px",
+    color: location.pathname === path ? "#1976d2" : "inherit",
+    borderBottom: location.pathname === path ? "2px solid #1976d2" : "none",
+    paddingBottom: "2px",
+  });
+
   return (
     <>
-      <Box sx={{ bgcolor: "grey.100", py: 1 }}>
-        <Container maxWidth="lg">
+      <Box sx={{ bgcolor: "transparent" }}>
+        <Container maxWidth="xl">
           <Grid container alignItems="center" justifyContent="space-between">
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <Box sx={{ display: { xs: "block", md: "none" } }}>
@@ -191,29 +207,52 @@ function Header() {
                 sx={{ fontWeight: 600, display: { xs: "none", md: "block" } }}
               >
                 <IoLocationSharp size={15} />
-                <span style={{ fontSize: "12px" }}>
-                  {" "}
+                <span style={{ fontSize: "10px" }}>
                   221B Baker Street, London, UK
                 </span>
               </Typography>
             </Box>
-            <Box>
-              <AccountCircle sx={{ fontSize: 22 }} />
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <IconButton>
+                <FaInstagram size={15} />
+              </IconButton>
+              <IconButton>
+                <FaFacebook size={15} />
+              </IconButton>
+              <IconButton>
+                <FaTiktok size={15} />
+              </IconButton>
             </Box>
           </Grid>
         </Container>
       </Box>
 
-      <Divider />
-
-      {/* Menu */}
-      <AppBar position="static" color="inherit" elevation={0}>
-        <Container maxWidth="lg">
+      {/* Home Header */}
+      <AppBar
+        position={isDesktop && scrolled ? "fixed" : "static"}
+        color="inherit"
+        elevation={0}
+        sx={{
+          borderRadius: "20px",
+          boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ py: 1 }}>
             {/* Logo */}
-            <Typography variant="h6" sx={{ fontWeight: "bold", flexGrow: 1 }}>
-              <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-                Electronic products
+            <Typography sx={{ fontWeight: "bold", flexGrow: 1 }}>
+              <Link
+                to="/"
+                style={{
+                  textDecoration: "none",
+                  color: "red",
+                  fontFamily: "cursive",
+                  fontSize: "35px",
+                  marginRight: "10px",
+                  width: "50%",
+                }}
+              >
+                Nexa
               </Link>
             </Typography>
 
@@ -225,24 +264,21 @@ function Header() {
                 gap: 3,
               }}
             >
-              <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              <Link to="/" style={getLinkStyle("/")}>
                 Home
               </Link>
-              <Link
-                to="/about"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                About
+              <Link to="/about" style={getLinkStyle("/about")}>
+                About Us
               </Link>
-              <Link
-                to="/contact"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                Contact
+              <Link to="/product" style={getLinkStyle("/product")}>
+                Products
+              </Link>
+              <Link to="/contact" style={getLinkStyle("/contact")}>
+                Contact Us
               </Link>
             </Box>
 
-            {/* Search icon and input */}
+            {/* Search */}
             <Box sx={{ position: "relative" }} ref={searchRef}>
               <Box
                 sx={{
@@ -271,7 +307,7 @@ function Header() {
                   onFocus={() => setShowResults(true)}
                 />
               </Box>
-              {showResults && searchTerm && filteredProducts.length > 0 && (
+              {showResults && searchTerm && (
                 <Paper
                   sx={{
                     position: "absolute",
@@ -283,25 +319,28 @@ function Header() {
                     zIndex: 10,
                   }}
                 >
-                  {filteredProducts.map((product) => (
-                    <Box
-                      key={product.id}
-                      sx={{
-                        padding: "8px",
-                        cursor: "pointer",
-                        borderBottom: "1px solid #eee",
-                        "&:hover": { backgroundColor: "#f5f5f5" },
-                      }}
-                      onClick={() => handleProductClick(product.id)}
-                    >
-                      {product.name}
-                    </Box>
-                  ))}
+                  {filteredProducts.length > 0 ? (
+                    filteredProducts.map((product) => (
+                      <Box
+                        key={product.id}
+                        sx={{
+                          padding: "8px",
+                          cursor: "pointer",
+                          borderBottom: "1px solid #eee",
+                          "&:hover": { backgroundColor: "#f5f5f5" },
+                        }}
+                        onClick={() => handleProductClick(product.id)}
+                      >
+                        {product.name}
+                      </Box>
+                    ))
+                  ) : (
+                    <Box sx={{ padding: "8px", color: "gray" }}>Not Found</Box>
+                  )}
                 </Paper>
               )}
             </Box>
 
-            {/* Right icons */}
             <Box sx={{ display: "flex", alignItems: "center", ml: 2, gap: 1 }}>
               <IconButton onClick={() => openDrawer("favorites")}>
                 <Badge badgeContent={favoritesCount} color="secondary">
@@ -318,7 +357,7 @@ function Header() {
         </Container>
       </AppBar>
 
-      {/* Mobil Menu */}
+      {/* Mobile Menu */}
       <Drawer
         anchor="right"
         open={menuOpen}
@@ -338,13 +377,32 @@ function Header() {
         </Box>
         <List sx={{ textAlign: "center" }}>
           <ListItem button component={Link} to="/" onClick={closeMenu}>
-            <ListItemText primary="Home" />
+            <ListItemText
+              primary="Home"
+              primaryTypographyProps={{ fontSize: "20px", fontWeight: "bold" }}
+              sx={location.pathname === "/" && { color: "#1976d2" }}
+            />
           </ListItem>
           <ListItem button component={Link} to="/about" onClick={closeMenu}>
-            <ListItemText primary="About" />
+            <ListItemText
+              primary="About Us"
+              primaryTypographyProps={{ fontSize: "20px", fontWeight: "bold" }}
+              sx={location.pathname === "/about" && { color: "#1976d2" }}
+            />
+          </ListItem>
+          <ListItem button component={Link} to="/product" onClick={closeMenu}>
+            <ListItemText
+              primary="Products"
+              primaryTypographyProps={{ fontSize: "20px", fontWeight: "bold" }}
+              sx={location.pathname === "/product" && { color: "#1976d2" }}
+            />
           </ListItem>
           <ListItem button component={Link} to="/contact" onClick={closeMenu}>
-            <ListItemText primary="Contact" />
+            <ListItemText
+              primary="Contact Us"
+              primaryTypographyProps={{ fontSize: "20px", fontWeight: "bold" }}
+              sx={location.pathname === "/contact" && { color: "#1976d2" }}
+            />
           </ListItem>
         </List>
       </Drawer>

@@ -4,18 +4,35 @@ html, body {
     padding: 0;
     width: 100%;
     user-select: none !important;
+    -webkit-user-drag: none !important;
      
     
   }
 
   .img{
-    transform: scale(0.6);
-    transition: all .4s ease-in;
+    transform: scale(0.9);
+    transition: all .3s ease-in;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
 
   }
 
   .img:hover{
-    transform: scale(0.9);
+    transform: scale(1);
     cursor: pointer;
   }
   
+
+
+  .card-home{
+    background: #ffffff;   
+  }
+    
+
+
+
+  .card-home:hover{
+     background: #ffffffe1;
+     box-shadow: 0 0 20px #00000068;
+     transition: all 0.3s ease-in-out;
+  }
