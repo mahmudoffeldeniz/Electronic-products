@@ -1,4 +1,4 @@
-<a herf="https://electronic-products-seven.vercel.app/">Live Deomo</a>
+<a href="https://electronic-products-seven.vercel.app/">Live Deomo</a>
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); grid-gap: 10px;">
   <img src="./src/assets/img/1.png" alt="Screenshot 1" style="width:100%; border-radius: 8px;">
